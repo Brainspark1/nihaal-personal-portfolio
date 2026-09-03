@@ -1,0 +1,14 @@
+* {
+    text-align: center;
+}
+
+h1 {
+    background-image: linear-gradient(#ff8a00, #e52e71);
+    color: white
+}
+
+#special {
+    background-image: linear-gradient(#a01cdd, #0d58d9);
+    font-size: 40px;
+    color: white
+}
