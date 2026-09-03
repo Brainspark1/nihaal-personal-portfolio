@@ -4,11 +4,22 @@
 
 h1 {
     background-image: linear-gradient(#ff8a00, #e52e71);
-    color: white
+    color: white;
+}
+
+h1:hover {
+    color: yellow;
+    transition: color 0.3s ease-in-out;
 }
 
 #special {
     background-image: linear-gradient(#a01cdd, #0d58d9);
     font-size: 40px;
-    color: white
+    color: white;
+
+    transition: font-size 0.3s ease-in-out;
+}
+
+#special:hover {
+    font-size: 100px;
 }
