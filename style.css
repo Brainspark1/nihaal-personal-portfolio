@@ -1,10 +1,11 @@
-* {
-    text-align: center;
+*:not(h1) {
+    text-align: left;
 }
 
 h1 {
     background-image: linear-gradient(#ff8a00, #e52e71);
     color: white;
+    text-align: center
 }
 
 h1:hover {
@@ -22,4 +23,8 @@ h1:hover {
 
 #special:hover {
     font-size: 100px;
+}
+
+ul {
+    justify-content: center;
 }
