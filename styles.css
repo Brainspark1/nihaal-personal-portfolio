@@ -1,5 +1,9 @@
 /* regular */
 
+body:not(h1) {
+    padding-left: 10px;
+}
+
 *:not(h1) {
     text-align: left;
 }
@@ -19,7 +23,23 @@ ul {
     color: black;
 }
 
-/* goofy */
+#goofy-checkbox {
+    width: 1.4rem;
+    height: 1.4rem;
+
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#obviously {
+    display: none;
+}
+
+#period {
+    display: inline;
+}
+
+/* goofy - when body get goofy-theme class, what happens to every specified component */
 
 body.goofy-theme h1 {
     background-image: linear-gradient(#ff8a00, #e52e71);
@@ -46,6 +66,10 @@ body.goofy-theme #obviously {
     display: inline-block;
 }
 
+body.goofy-theme #intro-period {
+    display: none;
+}
+
 body.goofy-theme #hand {
     font-size: 5rem;
 
@@ -68,20 +92,36 @@ body.goofy-theme h2 {
 /* animations */
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from { 
+        transform: rotate(0deg); 
+    }
+    to { 
+        transform: rotate(360deg); 
+    }
 }
 
 @keyframes size {
-    0% { font-size: 50px; }
-    50% { font-size: 90px; }
-    100% { font-size: 50px; }
+    0% { 
+        font-size: 50px; 
+    }
+    50% { 
+        font-size: 90px; 
+    }
+    100% { 
+        font-size: 50px; 
+    }
 }
 
 @keyframes turn-color {
-    0% { color: white; }
-    50% { color: yellow; }
-    100% { color: white; }
+    0% { 
+        color: white; 
+    }
+    50% { 
+        color: yellow; 
+    }
+    100% { 
+        color: white; 
+    }
 }
 
 @keyframes swayText {
