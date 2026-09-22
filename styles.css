@@ -1,5 +1,14 @@
 /* regular */
 
+* {
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #121110;
+}
+
 body:not(h1) {
     padding-left: 10px;
 }
@@ -19,10 +28,6 @@ ul {
     justify-content: center;
 }
 
-#special {
-    color: black;
-}
-
 #goofy-checkbox {
     width: 1.4rem;
     height: 1.4rem;
@@ -37,6 +42,14 @@ ul {
 
 #period {
     display: inline;
+}
+
+nav label a {
+    transition: font-size 0.2s ease-in-out;
+}
+
+nav label a:hover {
+    font-size: 20px;
 }
 
 /* goofy - when body get goofy-theme class, what happens to every specified component */
@@ -87,6 +100,12 @@ body.goofy-theme #like-do li {
 
 body.goofy-theme h2 {
     font-size: 38px;
+}
+
+body.goofy-theme #my-photo {
+    animation: move-left-right infinite 13s ease-in-out;
+
+    transform-origin: center;
 }
 
 /* animations */
@@ -151,5 +170,17 @@ body.goofy-theme h2 {
     }
     100% {
         font-size: 20px;
+    }
+}
+
+@keyframes move-left-right {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(1025px);
+    }
+    100% {
+        transform: translateX(0px);
     }
 }
