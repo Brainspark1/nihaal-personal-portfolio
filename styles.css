@@ -1,7 +1,11 @@
 /* regular */
 
-* {
+*:not(input) {
     color: white;
+    font-family:'Courier New', Courier, monospace;
+}
+
+input {
     font-family:'Courier New', Courier, monospace;
 }
 
@@ -18,7 +22,6 @@ body:not(h1) {
 }
 
 h1 {
-    background-image: linear-gradient(#ff8a00, #e52e71);
     color: white;
     text-align: center;
     font-size: 50px;
@@ -52,10 +55,18 @@ nav label a:hover {
     font-size: 20px;
 }
 
+label, input {
+    display: block;
+    font-size: larger;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
 /* goofy - when body get goofy-theme class, what happens to every specified component */
 
 body.goofy-theme h1 {
-    background-image: linear-gradient(#ff8a00, #e52e71);
     color: white;
     text-align: center;
     animation: turn-color 2s infinite ease-in-out;
@@ -106,6 +117,19 @@ body.goofy-theme #my-photo {
     animation: move-left-right infinite 13s ease-in-out;
 
     transform-origin: center;
+}
+
+body.goofy-theme form label {
+    animation: move-less-left-right infinite 4s ease-in-out;
+
+    transform-origin: center;
+}
+
+body.goofy-theme #submit-button {
+    margin-top: 30px;
+
+    display: inline-block;
+    animation: spin 14s infinite linear;
 }
 
 /* animations */
@@ -179,6 +203,18 @@ body.goofy-theme #my-photo {
     }
     50% {
         transform: translateX(1025px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes move-less-left-right {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(1005px);
     }
     100% {
         transform: translateX(0px);
