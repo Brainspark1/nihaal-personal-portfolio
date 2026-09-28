@@ -31,6 +31,17 @@ ul {
     justify-content: center;
 }
 
+img {
+    border-radius: 20px;
+}
+
+#github-logo {
+    height: 30px;
+    width: 30px;
+    padding-left: 14px;
+    vertical-align: middle;
+}
+
 #goofy-checkbox {
     width: 1.4rem;
     height: 1.4rem;
@@ -47,12 +58,19 @@ ul {
     display: inline;
 }
 
+#projects-list {
+    padding-bottom: 10px;
+}
+
 nav label a {
     transition: font-size 0.2s ease-in-out;
+
+    vertical-align: middle;
+    align-items: center;
 }
 
 nav label a:hover {
-    font-size: 20px;
+    font-size: 27px;
 }
 
 label, input {
@@ -61,6 +79,34 @@ label, input {
 }
 
 input {
+    margin-bottom: 10px;
+}
+
+#projects-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#message {
+    padding-bottom: 200px;
+}
+
+#contact-form #submit-button {
+    margin-top: 20px;
+}
+
+.skills-list {
+    list-style-type: none;
+}
+
+.skills-list li {
+    background-image: url(starImage.webp);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: 20px 20px;
+    padding-left: 30px;
+
     margin-bottom: 10px;
 }
 
@@ -109,6 +155,13 @@ body.goofy-theme #like-do li {
     transform-origin: left center;
 }
 
+body.goofy-theme .skills-list li {
+    display: block;
+    animation: grow-size infinite 5s ease-in-out;
+
+    transform-origin: left center;
+}
+
 body.goofy-theme h2 {
     font-size: 38px;
 }
@@ -130,6 +183,18 @@ body.goofy-theme #submit-button {
 
     display: inline-block;
     animation: spin 14s infinite linear;
+}
+
+body.goofy-theme .github-profile-badge {
+    transition: font-size 0.3s ease-in-out;
+    display: inline-block;
+    animation: spin 14s infinite linear;
+}
+
+body.goofy-theme #projects-list li h3 {
+    animation: move-less-left-right infinite 4s ease-in-out;
+
+    transform-origin: center;
 }
 
 /* animations */

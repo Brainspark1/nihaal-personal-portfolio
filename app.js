@@ -1,6 +1,5 @@
 const checkbox = document.getElementById("goofy-checkbox");
-
-const submitButton = document.getElementById("submit-button");
+const contactForm = document.getElementById("contact-form");
 
 checkbox.addEventListener('change', function() {
     if (this.checked) {
@@ -14,22 +13,24 @@ checkbox.addEventListener('change', function() {
     }
 }) 
 
-submitButton.addEventListener('click', (event) => {
-    event.preventDefault(); // stops page from reloading due to submit button
+contactForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-   for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < 24; i++) {
         confetti({ 
-            particleCount: 5, 
+            particleCount: 8, 
             angle: 60, 
             spread: 55, 
             origin: { x: 0 } 
         });
   
         confetti({ 
-            particleCount: 5, 
+            particleCount: 8, 
             angle: 120, 
             spread: 55, 
             origin: { x: 1 } 
         });
     }
-});
+
+    contactForm.reset();
+})

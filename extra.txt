@@ -1,0 +1,26 @@
+// email
+
+emailjs.init("kZGkRU108l5WlCaCN");
+
+const sendEmail = async (event) => {
+  event.preventDefault();
+
+  const form = event.target;
+
+  try {
+    const response = await emailjs.sendForm(
+      "service_vh4a8cd",
+      "template_77nd76i",
+      form,
+    );
+    console.log("Email sent successfully!", response);
+  } catch (error) {
+    console.error("Failed to send email:", error);
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", sendEmail);
+});

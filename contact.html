@@ -8,7 +8,8 @@
     <nav class="navbar" style="display: flex; justify-content: flex-end; padding-bottom: 10px;"> 
         <label> 
             <a href="index.html" style="position: fixed; left: 20px; vertical-align: middle;">Home</a>
-            <a href="contact.html" style="position: fixed; left: 80px; vertical-align: middle;">Contact</a>
+            <a href="skills.html" style="position: fixed; left: 105px; vertical-align: middle;">Skills</a>
+            <a href="contact.html" style="position: fixed; left: 212px; vertical-align: middle;">Contact</a>
             <span style="position: fixed; right: 57px; top: 15px; font-size: 26px;"><strong>Goofy Mode?</strong></span> 
             <input style="position: fixed; right: 20px; top: 15px;" type="checkbox" id="goofy-checkbox">
         </label> 
@@ -16,9 +17,9 @@
 </head>
 <body>
     <main>
-        <h1 style="background-image: linear-gradient(#006eff, #9c2ee5);">Contact</h1>
+        <h1 style="background-image: linear-gradient(#FBD3E9, #BB377D);">Contact</h1>
 
-        <form>
+        <form id="contact-form">
             <label for="firstname" style="animation-delay: 0s;">First Name</label>
             <input type="text" id="firstname" name="firstname" placeholder="Your name">
 
@@ -28,10 +29,11 @@
             <label for="message" style="animation-delay: 2s;">Message</label>
             <input type="text" id="message" name="message" placeholder="Message">
 
-            <input type="submit" id="submit-button" name="submit" style="color: black;">
+            <input type="submit" id="submit-button" name="submit-button" style="color: black;">
         </form>
     </main>
 
+    <!-- adding script for confetti implementation -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.9.3/tsparticles.confetti.bundle.min.js"></script>
     <script src="app.js"></script>
 </body>
