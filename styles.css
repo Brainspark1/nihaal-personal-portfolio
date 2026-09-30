@@ -83,8 +83,8 @@ input {
 }
 
 #projects-header {
-    display: flex;
-    align-items: center;
+    display: flex; /* dynamically sizes elements to allow them to sit inline to each other */
+    align-items: center; /* aligns items in opposite direction to flex - flex is horizontal, so in this case vertically center/along cross axis */
     gap: 20px;
 }
 
@@ -94,20 +94,6 @@ input {
 
 #contact-form #submit-button {
     margin-top: 20px;
-}
-
-.skills-list {
-    list-style-type: none;
-}
-
-.skills-list li {
-    background-image: url(starImage.webp);
-    background-repeat: no-repeat;
-    background-position: 0 center;
-    background-size: 20px 20px;
-    padding-left: 30px;
-
-    margin-bottom: 10px;
 }
 
 /* goofy - when body get goofy-theme class, what happens to every specified component */
@@ -131,9 +117,10 @@ body.goofy-theme #special {
 body.goofy-theme #obviously {
     font-size: 70px;
 
-    animation: swayText 4s infinite ease-in-out;
-    transform-origin: bottom center;
-    display: inline-block;
+    animation: sway-text 4s infinite ease-in-out;
+    display: inline-block; /* allows text to sit inline with main paragraph elements while respecting changing size dimensions in animations for animations to occur */
+
+    transform-origin: bottom center; /* causes changes to the position of the element to be made from the bottom center of the element, along the bottom to stay set in place while the rest performs the changes */
 }
 
 body.goofy-theme #intro-period {
@@ -143,16 +130,15 @@ body.goofy-theme #intro-period {
 body.goofy-theme #hand {
     font-size: 5rem;
 
-    animation: swayText 0.2s infinite ease-in-out;
-    transform-origin: bottom center;
+    animation: sway-text 0.2s infinite ease-in-out;
     display: inline-block;
+
+    transform-origin: bottom center;
 }
 
 body.goofy-theme #like-do li {
     display: block;
     animation: grow-size infinite 5s ease-in-out;
-
-    transform-origin: left center;
 }
 
 body.goofy-theme .skills-list li {
@@ -168,14 +154,10 @@ body.goofy-theme h2 {
 
 body.goofy-theme #my-photo {
     animation: move-left-right infinite 13s ease-in-out;
-
-    transform-origin: center;
 }
 
 body.goofy-theme form label {
     animation: move-less-left-right infinite 4s ease-in-out;
-
-    transform-origin: center;
 }
 
 body.goofy-theme #submit-button {
@@ -193,17 +175,15 @@ body.goofy-theme .github-profile-badge {
 
 body.goofy-theme #projects-list li h3 {
     animation: move-less-left-right infinite 4s ease-in-out;
-
-    transform-origin: center;
 }
 
-/* animations */
+/* defining keyframe animations */
 
-@keyframes spin {
-    from { 
+@keyframes spin { /* keyframes lay out animations by stating what property should be at what part during the animation */
+    0% { 
         transform: rotate(0deg); 
     }
-    to { 
+    100% { 
         transform: rotate(360deg); 
     }
 }
@@ -232,7 +212,7 @@ body.goofy-theme #projects-list li h3 {
     }
 }
 
-@keyframes swayText {
+@keyframes sway-text {
     0% {
         transform: skewX(0deg); /* starting straight up */
     }

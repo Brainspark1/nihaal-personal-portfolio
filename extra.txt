@@ -24,3 +24,26 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("contact-form")
     .addEventListener("submit", sendEmail);
 });
+
+
+// contactForm.addEventListener('submit', function(event) {
+//     event.preventDefault();
+
+//     for (let i = 0; i < 24; i++) {
+//         confetti({ 
+//             particleCount: 8, 
+//             angle: 60, 
+//             spread: 55, 
+//             origin: { x: 0 } 
+//         });
+  
+//         confetti({ 
+//             particleCount: 8, 
+//             angle: 120, 
+//             spread: 55, 
+//             origin: { x: 1 } 
+//         });
+//     }
+
+//     contactForm.reset();
+// })
