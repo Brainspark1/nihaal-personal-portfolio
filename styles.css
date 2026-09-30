@@ -1,11 +1,11 @@
 /* regular */
 
-*:not(input) {
+*:not(input, textarea) {
     color: white;
     font-family:'Courier New', Courier, monospace;
 }
 
-input {
+input, textarea {
     font-family:'Courier New', Courier, monospace;
 }
 
@@ -73,8 +73,12 @@ nav label a:hover {
     font-size: 27px;
 }
 
-label, input {
+label, input, textarea {
     display: block;
+    font-size: larger;
+}
+
+form p {
     font-size: larger;
 }
 
@@ -94,6 +98,34 @@ input {
 
 #contact-form #submit-button {
     margin-top: 20px;
+}
+
+.help-radio {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    gap: 10px;
+
+    padding-bottom: 5px;
+}
+
+#email-image {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    padding-right: 7px;
+}
+
+#mail-link {
+    font-size: larger;
+}
+
+#red-arrow {
+    position: absolute;
+    right: 20px;
+    width: 55px;
+    top: 170px;
+    animation: move-up-down infinite 2s ease-in-out;
 }
 
 /* goofy - when body get goofy-theme class, what happens to every specified component */
@@ -143,7 +175,7 @@ body.goofy-theme #like-do li {
 
 body.goofy-theme .skills-list li {
     display: block;
-    animation: grow-size infinite 5s ease-in-out;
+    animation: grow-size infinite 2s ease-in-out;
 
     transform-origin: left center;
 }
@@ -175,6 +207,21 @@ body.goofy-theme .github-profile-badge {
 
 body.goofy-theme #projects-list li h3 {
     animation: move-less-left-right infinite 4s ease-in-out;
+}
+
+body.goofy-theme #mail-link {
+    font-size: 3em;
+}
+
+body.goofy-theme #email-image {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    padding-right: 7px;
+}
+
+body.goofy-theme #red-arrow {
+    display: none;
 }
 
 /* defining keyframe animations */
@@ -263,5 +310,17 @@ body.goofy-theme #projects-list li h3 {
     }
     100% {
         transform: translateX(0px);
+    }
+}
+
+@keyframes move-up-down {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }

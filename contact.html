@@ -27,10 +27,32 @@
             <input type="text" id="lastname" name="lastname" placeholder="Your last name">
 
             <label for="message" style="animation-delay: 2s;">Message</label>
-            <input type="text" id="message" name="message" placeholder="Message">
+            <textarea type="text" id="message" name="message" placeholder="What's up?" rows="1"></textarea>
+
+            <p>What kind of help do you need from me?</p>
+
+            <div class="help-radio">
+                <input type="radio" id="coding-help" name="help">
+                <label for="coding-help" style="animation-delay: 0s">Coding Help</label>
+            </div>
+            <div class="help-radio">
+                <input type="radio" id="math-help" name="help">
+                <label for="math-help" style="animation-delay: 1s">Math Help</label>
+            </div>
+            <div class="help-radio">
+                <input type="radio" id="chess-help" name="help">
+                <label for="chess-help" style="animation-delay: 2s">Chess Help</label>
+            </div>
+            <div class="help-radio">
+                <input type="radio" id="other-help" name="help">
+                <label for="other-help" style="animation-delay: 3s">Other Help</label>
+            </div>
 
             <input type="submit" id="submit-button" name="submit-button" style="color: black;">
         </form>
+
+        <h2>Direct Contact</h2>
+        <p>Feel free to also directly reach out to me at <a id="mail-link" href="mailto:brainsparkteam@gmail.com"><img id="email-image" src="emailIcon.webp" alt="email icon">brainsparkteam@gmail.com</a> with any questions.</p>
     </main>
     <script src="app.js"></script>
 </body>

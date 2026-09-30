@@ -1,6 +1,7 @@
 const checkbox = document.getElementById("goofy-checkbox");
+const contactForm = document.getElementById("contact-form");
 
-checkbox.addEventListener('change', function() {
+checkbox.addEventListener("change", function() {
     if (checkbox.checked) {
         document.body.classList.add("goofy-theme");
 
