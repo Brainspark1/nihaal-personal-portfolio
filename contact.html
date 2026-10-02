@@ -17,6 +17,8 @@
 </head>
 <body>
     <main>
+        <img src="redArrow.png" alt="red pointing arrow" id="red-arrow">
+
         <h1 style="background-image: linear-gradient(#FBD3E9, #BB377D);">Contact</h1>
 
         <form id="contact-form">
@@ -29,7 +31,7 @@
             <label for="message" style="animation-delay: 2s;">Message</label>
             <textarea type="text" id="message" name="message" placeholder="What's up?" rows="1"></textarea>
 
-            <p>What kind of help do you need from me?</p>
+            <p>What kind of <span id="help-word">help</span> do you need from me?</p>
 
             <div class="help-radio">
                 <input type="radio" id="coding-help" name="help">
