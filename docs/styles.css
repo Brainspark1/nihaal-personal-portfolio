@@ -1,12 +1,15 @@
 /* regular */
 
-*:not(input, textarea) {
-    color: white;
+* {
     font-family:'Courier New', Courier, monospace;
 }
 
-input, textarea {
-    font-family:'Courier New', Courier, monospace;
+*:not(input, textarea, select) {
+    color: white;
+}
+
+select {
+    font-size: large;
 }
 
 body {
@@ -193,6 +196,13 @@ body.goofy-theme form label {
 }
 
 body.goofy-theme #submit-button {
+    margin-top: 30px;
+
+    display: inline-block;
+    animation: spin 14s infinite linear;
+}
+
+body.goofy-theme #dropdown-menu select {
     margin-top: 30px;
 
     display: inline-block;
