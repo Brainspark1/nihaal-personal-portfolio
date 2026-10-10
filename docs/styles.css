@@ -1,84 +1,128 @@
-/* regular */
+/* non-goofy mode, regular elements across all files and pages */
 
+/* setting the font Courier New to all text elements across all html pages in the website */
 * {
     font-family:'Courier New', Courier, monospace;
+    text-align: left; /* aligning all text to be aligned to the left by default unless specified otherwise in the element's individual styling */
 }
 
+/* using not pseudo-class to show that for every element that is not an input, textarea or select/drop-down menu ... */
 *:not(input, textarea, select) {
-    color: white;
+    color: white; /* ... set its font color to white, meaning that the input, textarea and select all default to black for readability against their respective white backgrounds */
 }
 
-select {
-    font-size: large;
-}
-
+/* setting a dark background color to each page's body and a left padding to prevent any elements from touching the edge and looking bad */
 body {
     background-color: #121110;
-}
-
-body:not(h1) {
-    padding-left: 10px;
-}
-
-*:not(h1) {
-    text-align: left;
+    padding-left: 10px; /* padding is adding spacing between the edge of an element to another internally, in this case to the left of every element from the body to add more separation of the content from the edges of the screen on each pae */
 }
 
 h1 {
     color: white;
-    text-align: center;
+    text-align: center; /* centering every largest heading (h1) along the page */
     font-size: 50px;
 }
 
-ul {
-    justify-content: center;
+/* --------- styling the footer on each page --------- */
+
+footer p {
+    text-align: center;
+    font-size: 15px; /* setting smaller font size to not draw too much attention to the footer */
+
+    margin-top: 20px; /* margin allows for adding spacing between elements externally/outside an element's borders, or between the footer's text and everything else above */
+
+    padding-bottom: 10px; /* padding allows for adding spacing between elements internally - needed here instead of margin-bottom to add space between bottom edge of screen and footer text, as unlike margins, padding is able to push against the viewport/edges of the screen to create this separation */
 }
+
+footer hr {
+    opacity: 50%; /* decreasing the opacity of the horizontal line in the footer to make it less transparent and thus not stand out as much as if it was 100% opacity/no transparency */
+}
+
+/* --------- styling the nav bar --------- */
+
+nav {
+    padding-bottom: 10px; /* allows for spacing underneath the navbar to the main content */
+}
+
+/* styling for each page link in the nav bar */
+.nav-link {
+    position: absolute; /* absolute position removes an element from the standard flow of the document and places it exactly where it needs to be (assigned with left/right positions in the HTML inline CSS) relative to its nearest parent element, or in this case the body of the page - allows for the links to be positioned exactly where they need to be and stay there */
+
+    vertical-align: middle;
+
+    font-size: x-large; /* extra large font size to appear more readable */
+    transition: 0.2s ease-in-out; /* added transition style specifies duration of animation and animation style of easing in and out for smoother, quicker transitions on hover of each link to increase font size responsively */
+}
+
+/* using pseudo-class of hover so when each link in the nav bar is hovered ... */
+.nav-link:hover {
+    font-size: 27px; /* the link increases font size, showing to users that it can be clicked */
+}
+
+/* styling for each element in the nav bar that makes up goofy mode functionality */
+.nav-goofy {
+    position: absolute; /* as defined above, absolute position allows for elements to remain fixed in place relative to document in order for their positions to be controlled with the inline css in the html files */
+
+    top: 15px; /* places each of these elements 15px from the top of the page, using the absolute position control defined above */
+}
+
+/* --------- index.html --------- */
 
 #my-photo {
-    border-radius: 20px;
-}
-
-#github-logo {
-    height: 30px;
-    width: 30px;
-    padding-left: 14px;
-    vertical-align: middle;
+    border-radius: 20px; /* rounding the corners of the image to make it look more visually pleasing */
 }
 
 #goofy-checkbox {
-    width: 1.4rem;
-    height: 1.4rem;
+    /* after many rounds of trial and error, these dimensions of the checkbox found in the nav bar on each page makes it look the best */
+    width: 22.4px;
+    height: 22.4px;
 
     vertical-align: middle;
-    cursor: pointer;
+    cursor: pointer; /* changing the cursor to the pointer on every device, so when the checkbox is hovered over, it appears as if it can be clicked and something will happen for the user */
 }
 
 #obviously {
-    display: none;
+    display: none; /* indicates that initially, this element is not on the page when the page first loads - changes when goofy mode is applied below */
 }
 
-#period {
-    display: inline;
+#intro-paragraph {
+    font-size: 26px;
+}
+
+/* --------- skills.html --------- */
+
+.projects-head3 {
+    font-size: 35px;
 }
 
 #projects-list {
     padding-bottom: 10px;
 }
 
-nav label a {
-    transition: font-size 0.2s ease-in-out;
-
-    vertical-align: middle;
-    align-items: center;
+.tech-stack-titles {
+    font-size: 24px;
 }
 
-nav label a:hover {
-    font-size: 27px;
+.project-names {
+    font-size: 25px;
 }
+
+#projects-header {
+    display: flex; /* flex type displays dynamically size elements to allow them to sit inline to each other */
+    align-items: center; /* aligns items in opposite direction to flex - flex is horizontal, so in this case vertically center/along cross axis */
+    gap: 20px; /* creating a 20px wide gap between each element in the header, adding more visual spacing and thus making it more visually pleasing to read */
+}
+
+/* --------- contact.html --------- */
 
 label, input, textarea {
-    display: block;
+    display: block; /* block type display styles forces the element to occupy the full width of the page it is given, allowing for the labels and input areas in the contact form to take separate lines and not be on the same line - if was removed, the labels and input elements would thus sit on the same line and not look good */
+
     font-size: larger;
+}
+
+textarea {
+    padding-bottom: 200px; /* increasing internal padding within the textarea input in the contact form - allows for textarea to appear deeper to allow users to more easily type longer messages and see what they are typing */
 }
 
 form p {
@@ -89,25 +133,24 @@ input {
     margin-bottom: 10px;
 }
 
-#projects-header {
-    display: flex; /* dynamically sizes elements to allow them to sit inline to each other */
-    align-items: center; /* aligns items in opposite direction to flex - flex is horizontal, so in this case vertically center/along cross axis */
-    gap: 20px;
-}
-
-#message {
-    padding-bottom: 200px;
+select {
+    font-size: large;
 }
 
 #contact-form #submit-button {
+    margin-top: 20px; /* adding spacing above the submit button to separate it from the rest of the inputs */
+}
+
+#dropdown-menu {
     margin-top: 20px;
 }
 
+/* styling applied to each radio button in the contact form to allow label and button to sit inline with each other */
 .help-radio {
-    display: flex;
-    align-items: center;
-    vertical-align: middle;
-    gap: 10px;
+    display: flex; /* as mentioned above, flex displays allows the elements to take up how much ever space they need to sit side by side with each other, thus accomplishing the goal of this class */
+
+    vertical-align: middle; /* centering the text vertically along the horizontal axes of the flex display */
+    gap: 10px; /* gap in between the button and labels for visual styling */
 
     padding-bottom: 5px;
 }
@@ -124,63 +167,76 @@ input {
 }
 
 #red-arrow {
-    position: absolute;
+    position: absolute; /* again, allows element to sit exactly where it is defined */
+
+    /* taking advantage of the element's absolute positioning to define exactly where it needs to sit relative to the edges of the body */
     right: 20px;
-    width: 70px;
     top: 170px;
+
+    width: 70px;
+
+    /* setting the keyframe animation defined below to allow the arrow to constantly move up and down forever, looping every 2 seconds (fast animation) and smoothly (easing the animation in and out) */
     animation: move-up-down infinite 2s ease-in-out;
 }
 
-/* goofy - when body get goofy-theme class, what happens to every specified component */
+/* goofy - when body get goofy-theme class (body.goofy-theme), what happens to every specified component */
+
+/* hiding red arrow whenever goofy mode is enabled, as red arrow is supposed to point to press goofy mode, so shouldn't show when goofy mode is active */
+body.goofy-theme #red-arrow {
+    display: none;
+}
+
+/* --------- index.html --------- */
 
 body.goofy-theme h1 {
     color: white;
     text-align: center;
-    animation: turn-color 2s infinite ease-in-out;
+
+    /* setting the keyframe animation defined below to allow the heading text to constantly change color forever, looping every 2 seconds (fast animation) and smoothly (easing the animation in and out) */
+    animation: turn-yellow-color 2s infinite ease-in-out;
 }
 
-body.goofy-theme #special {
-    background-image: linear-gradient(#a01cdd, #0d58d9);
+body.goofy-theme #code-span {
+    background-image: linear-gradient(#a01cdd, #0d58d9); /* creating a linear gradient to fade purple to blue along the text */
     font-size: 50px;
     color: white;
 
-    transition: font-size 0.3s ease-in-out;
-    display: inline-block;
-    animation: spin 14s infinite linear, size 3s infinite ease-in-out;
+    display: inline-block; /* allows text to sit inline with main paragraph elements while respecting changing size dimensions in animations for animations to occur */
+
+    /* setting two keyframe animations defined below to allow the text to constantly grow in size and spin in the right direction forever, looping every 3 and 14 seconds respectively and growing size smoothly (easing the animation in and out) while causing the rotation to occur linearly with no changes in speed/steady (removing would default the spin right animation to ease, generally causing the animation to occur faster) */
+    animation: spin-right 14s infinite linear, grow-larger-size 3s infinite ease-in-out;
 }
 
 body.goofy-theme #obviously {
     font-size: 70px;
 
-    animation: sway-text 4s infinite ease-in-out;
+    /* setting the keyframe animation defined below to allow the text to constantly tilt left and right forever, looping every 4 seconds (medium fast animation) and smoothly (easing the animation in and out) */
+    animation: tilt-text 4s infinite ease-in-out;
+
     display: inline-block; /* allows text to sit inline with main paragraph elements while respecting changing size dimensions in animations for animations to occur */
 
-    transform-origin: bottom center; /* causes changes to the position of the element to be made from the bottom center of the element, along the bottom to stay set in place while the rest performs the changes */
+    transform-origin: bottom center; /* causes changes to the position of the element to be made from the bottom center of the element, along the bottom to stay set in place while the rest performs the changes/tilting - if removed, the entire text tilts, not just the top, preventing the animation from looking like italicizing the text in both directions */
 }
 
 body.goofy-theme #intro-period {
-    display: none;
+    display: none; /* as mentioned previously, don't want the period when the code-span text is growing size as appears out of place, so setting no display under goofy mode to cause the period to disappear when this animation is going on */
 }
 
+/* very similar to the #obviously element defined above */
 body.goofy-theme #hand {
-    font-size: 5rem;
+    font-size: 80px;
 
-    animation: sway-text 0.2s infinite ease-in-out;
-    display: inline-block;
+    /* setting the keyframe animation defined below to allow the text to constantly tilt left and right forever, looping every 0.2 seconds (extremely fast animation) and smoothly (easing the animation in and out) - gives the impression that the hand is waving */
+    animation: tilt-text 0.2s infinite ease-in-out;
 
-    transform-origin: bottom center;
+    display: inline-block; /* allows text to sit inline with main paragraph elements while respecting changing size dimensions in animations for animations to occur */
+
+    transform-origin: bottom center; /* causes changes to the position of the element to be made from the bottom center of the element, along the bottom to stay set in place while the rest performs the changes/tilting - if removed, the entire text tilts, not just the top, preventing the animation from looking like italicizing the text in both directions */
 }
 
 body.goofy-theme #like-do li {
-    display: block;
-    animation: grow-size infinite 5s ease-in-out;
-}
-
-body.goofy-theme .skills-list li {
-    display: block;
-    animation: grow-size infinite 2s ease-in-out;
-
-    transform-origin: left center;
+    /* setting the keyframe animation defined below to allow the text to constantly grow into a smaller size and then return forever, looping every 5 seconds and smoothly (easing the animation in and out) - animation delay applied in inline css in html file gives illusion that elements are moving in wave-like form */
+    animation: grow-smaller-size infinite 5s ease-in-out;
 }
 
 body.goofy-theme h2 {
@@ -188,39 +244,67 @@ body.goofy-theme h2 {
 }
 
 body.goofy-theme #my-photo {
+     /* setting the keyframe animation defined below to allow the image to constantly move right then back left across the screen, looping every 13 seconds (slower animation) and smoothly (easing the animation in and out) */
     animation: move-left-right infinite 13s ease-in-out;
 }
 
+/* --------- skills.html --------- */
+
+body.goofy-theme .github-profile-badge {
+    display: inline-block; /* allows badge to sit inline with main paragraph elements while respecting changing size dimensions in animations for animations to occur - not just block, as needs to sit inline with the heading text */
+
+    /* setting the keyframe animation defined below to allow the badge to constantly spin to the right, looping every 14 seconds (slow animation) and linearly/steadily - if not linear animation style, then the element would not spin at a constant pace and not appear well */
+    animation: spin-right 14s infinite linear;
+}
+
+body.goofy-theme .skills-list li {
+    /* setting the keyframe animation defined below to allow each element in the list to grow to a smaller font size and then return forever smoothly (easing in and out) - using animation delay inline css for each specific li element in the html file to allow staggering the animations */
+    animation: grow-smaller-size infinite 2s ease-in-out;
+}
+
+body.goofy-theme #projects-list li h3 {
+    /* setting the keyframe animation defined below to allow each element in the move to the right and then return forever smoothly (easing in and out) - using animation delay inline css for each specific li element in the html file to allow staggering the animations */
+    animation: move-less-left-right infinite 4s ease-in-out;
+}
+
+body.goofy-theme .stats-images {
+    display: inline-block; /* allows the images to sit inline with main paragraph elements while respecting changing size dimensions in animations for animations to occur - not just block, as needs to sit inline with the surrounding text while still being able to animate */
+
+    /* setting the keyframe animation defined below to allow the image to constantly increase its size forever, looping every 3 seconds (fast animation) and smoothly (easing in and out) */
+    animation: grow-image-size infinite 3s ease-in-out;
+}
+
+body.goofy-theme #used-languages {
+    /* setting the keyframe animation defined below to allow the image to constantly move right and left across the screen forever, looping every 3 seconds (fast animation) and smoothly (easing in and out) */
+    animation: move-less-left-right infinite 3s ease-in-out;
+}
+
+/* --------- contact.html --------- */
+
 body.goofy-theme form label {
+     /* setting the keyframe animation defined below to allow the text labels to constantly move right then back left at a smaller distance across the screen, looping every 4 seconds (faster animation) and smoothly (easing the animation in and out) */
     animation: move-less-left-right infinite 4s ease-in-out;
 }
 
 body.goofy-theme #submit-button {
     margin-top: 30px;
 
-    display: inline-block;
-    animation: spin 14s infinite linear;
+    display: inline-block; /* allows element to sit inline with main paragraph elements while respecting changing size dimensions in animations for animations to occur */
+
+    /* setting the keyframe animation defined below to allow the button to constantly spin to the right, looping every 4 seconds (faster animation) and linearly/steadily - if not linear animation style, then the element would not spin at a constant pace and not appear well */
+    animation: spin-right 14s infinite linear;
 }
 
+/* similar to the #submit-button styling above */
 body.goofy-theme #dropdown-menu select {
     margin-top: 30px;
 
     display: inline-block;
-    animation: spin 14s infinite linear;
-}
-
-body.goofy-theme .github-profile-badge {
-    transition: font-size 0.3s ease-in-out;
-    display: inline-block;
-    animation: spin 14s infinite linear;
-}
-
-body.goofy-theme #projects-list li h3 {
-    animation: move-less-left-right infinite 4s ease-in-out;
+    animation: spin-left 14s infinite linear; /* different animation name to cause the element to spin left/in the opposite direction of the submit button to add contrast */
 }
 
 body.goofy-theme #mail-link {
-    font-size: 3em;
+    font-size: 48px;
 }
 
 body.goofy-theme #email-image {
@@ -230,40 +314,45 @@ body.goofy-theme #email-image {
     padding-right: 7px;
 }
 
-body.goofy-theme #red-arrow {
-    display: none;
-}
-
-body.goofy-theme .stats-images {
-    transition: ease-in-out;
-    animation: grow-image-size infinite 3s;
-    display: inline-block;
-}
-
-body.goofy-theme #used-languages {
-    animation: move-less-left-right infinite 3s ease-in-out;
-}
-
 body.goofy-theme #help-word {
-    background-image: linear-gradient(#D1913C, #FFD194);
+    background-image: linear-gradient(#D1913C, #FFD194); /* creating linear gradient to fade background color between orange and brown to highlight help text */
+
     color: black;
-    font-size: 3rem;
+    font-size: 48px;
+
+    /* setting the keyframe animation defined below to allow the help text to grow in font size then return forever, looping every 5 seconds (faster animation) and smoothly (easing in and out) */
+    animation: grow-larger-size infinite 5s ease-in-out;
 }
 
-/* defining keyframe animations */
+/* -------------------- defining keyframe animations in order to animate and move elements around -------------------- */
 
-@keyframes spin { /* keyframes lay out animations by stating what property should be at what part during the animation */
+/* keyframes lay out animations by stating what property should be at what part during the animation */
+
+/* animation to rotate an element clockwise */
+/* each keyframe animation is given a name ... */
+@keyframes spin-right { 
+    0% { /* ... the percentage through the animation of when a certain property of the element should be some value ... */
+        transform: rotate(0deg); /* the rotate method is a part of the transform property that allows the asigned element to set its rotation relative to its upwards normal direction to a certain value */
+    }
+    100% { /* ... and another follow-on percentage through the animation of when a certain property of the element should be some other value */
+        transform: rotate(360deg); /* positive rotation values indicate that the element should rotate clockwise, while negative rotation values indicate that the element whould rotate counterclockwise */
+    }
+}
+
+/* animation to rotate an element counterclockwise/left */
+@keyframes spin-left {
     0% { 
         transform: rotate(0deg); 
     }
     100% { 
-        transform: rotate(360deg); 
+        transform: rotate(-360deg); 
     }
 }
 
-@keyframes size {
+/* animation to change the size of a larger text element */
+@keyframes grow-larger-size {
     0% { 
-        font-size: 50px; 
+        font-size: 50px;
     }
     50% { 
         font-size: 90px; 
@@ -273,18 +362,33 @@ body.goofy-theme #help-word {
     }
 }
 
+/* animation to change the size of smaller text elements */
+@keyframes grow-smaller-size {
+    0% {
+        font-size: 20px;
+    }
+    50% {
+        font-size: 35px;
+    }
+    100% {
+        font-size: 20px;
+    }
+}
+
+/* animation to change the size of an image element by changing the image's width and heigth properties */
 @keyframes grow-image-size {
-    from {
-        width: auto;
+    0% {
+        width: auto; /* auto width and height values means that the image should start and return back to its initial size that it was created with in the html */
         height: auto;
     }
-    to {
+    100% {
         width: 650px;
         height: 650px;
     }
 }
 
-@keyframes turn-color {
+/* animation to change the color of an element from white to yellow - the h1 elements on the top of each html page */
+@keyframes turn-yellow-color {
     0% { 
         color: white; 
     }
@@ -296,7 +400,9 @@ body.goofy-theme #help-word {
     }
 }
 
-@keyframes sway-text {
+/* animation to sway the text left and right, almost italicizing itself */
+/* uses the skewX transform method, which tilts the elements along its axes - positive leans to the left, while negative leans to the right */
+@keyframes tilt-text {
     0% {
         transform: skewX(0deg); /* starting straight up */
     }
@@ -314,21 +420,10 @@ body.goofy-theme #help-word {
     }
 }
 
-@keyframes grow-size {
-    0% {
-        font-size: 20px;
-    }
-    50% {
-        font-size: 35px;
-    }
-    100% {
-        font-size: 20px;
-    }
-}
-
+/* animation to move an element from left to right back to left */
 @keyframes move-left-right {
     0% {
-        transform: translateX(0px);
+        transform: translateX(0px); /* translateX transform method allows an element to move a certain number of pixels horizontally from the starting position and then return back to its initial position (0 px in this case of this animation) */
     }
     50% {
         transform: translateX(1025px);
@@ -338,6 +433,7 @@ body.goofy-theme #help-word {
     }
 }
 
+/* animation to move an element from left to right back to left a smaller distance */
 @keyframes move-less-left-right {
     0% {
         transform: translateX(0px);
@@ -350,12 +446,13 @@ body.goofy-theme #help-word {
     }
 }
 
+/* animation to move an element from down to up back to down */
 @keyframes move-up-down {
     0% {
-        transform: translateY(0px);
+        transform: translateY(0px); /* just like the translateX transform method, the translateY method allows an element to move a certain number of pixels vertically from the starting position and then return back to its initial position (0 px in this case of this animation) */
     }
     50% {
-        transform: translateY(-50px);
+        transform: translateY(-50px); /* negative value causes the translation to begin by going down to prevent the tagged element (red arrow) from going over other elements on the page */
     }
     100% {
         transform: translateY(0px);

@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- what is not shown on the page -->
 <head>
+    <!-- sets character encoding to ensure all text shows up properly -->
     <meta charset="UTF-8">
+
+    <!-- allows page to be viewed on different devices initially zoomed at a normal amount -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title of the page -->
     <title>Nihaal's Portfolio - Contact</title>
+
+    <!-- linking my CSS file containing the code to style different html elements on this page -->
     <link rel="stylesheet" href="styles.css">
-    <nav class="navbar" style="display: flex; justify-content: flex-end; padding-bottom: 10px;"> 
-        <label> 
-            <a href="../index.html" style="position: absolute; left: 20px; vertical-align: middle;">Home</a>
-            <a href="skills.html" style="position: absolute; left: 105px; vertical-align: middle;">Skills</a>
-            <a href="contact.html" style="position: absolute; left: 212px; vertical-align: middle;">Contact</a>
-            <span style="position: absolute; right: 57px; top: 15px; font-size: 26px;"><strong>Goofy Mode?</strong></span> 
-            <input style="position: absolute; right: 20px; top: 15px;" type="checkbox" id="goofy-checkbox">
-        </label> 
-    </nav> 
 </head>
+
+<!-- what is shown on the page -->
 <body>
+    <!-- semantic HTML to create what will appear on the top of every page (the navigation bar) -->
+    <header> 
+        <!-- navigation bar to allow users to navigate to various pages on the site -->
+        <nav>
+             <!-- link to navigate to another html page on the website -->
+            <a href="../index.html" class="nav-link" style="left: 20px;">Home</a>
+            <a href="skills.html" class="nav-link" style="left: 105px;">Skills</a>
+            <a href="contact.html" class="nav-link" style="left: 212px;">Contact</a>
+
+            <!-- span allows inserting text that can be uniquely styled in every case -->
+            <span class="nav-goofy" style="right: 57px; font-size: 26px;"><b>Goofy Mode?</b></span> 
+            <!-- checkbox with functionality added in app.js to enable goofy mode on the website -->
+            <input class="nav-goofy" style="right: 20px;" type="checkbox" id="goofy-checkbox">
+        </nav> 
+    </header>
+
+    <!-- semantic HTML to create main body section of this home page -->
     <main>
+         <!-- image of red arrow pointing to goofy model with corresponding alt accessibility text -->
         <img src="../assets/redArrow.png" alt="red pointing arrow" id="red-arrow">
 
+        <!-- large heading title at the top of pages - linear gradient allows for creating a background color for the heading that fades from one color to another -->
         <h1 style="background-image: linear-gradient(#FBD3E9, #BB377D);">Contact</h1>
 
+        <!-- form allows users to easily fill out their information to send it to me - no functionality yet, just the looks of the form -->
         <form id="contact-form">
+            <!-- each section of the form contains a label telling what the user needs to do for each section... -->
             <label for="firstname" style="animation-delay: 0s;">First Name</label>
+            <!-- ...and the actual input with the same name as what the label was pointing to, and placeholder text for text inputs to further give a description to users of what to enter -->
             <input type="text" id="firstname" name="firstname" placeholder="Your name">
 
             <label for="lastname" style="animation-delay: 1s;">Last Name</label>
             <input type="text" id="lastname" name="lastname" placeholder="Your last name">
 
             <label for="message" style="animation-delay: 2s;">Message</label>
-            <textarea type="text" id="message" name="message" placeholder="What's up?" rows="1"></textarea>
+            <!-- differs from rest of the sections as uses a textarea, which is a larger text box compared to a text type input to allow users to more easily write larger messages -->
+            <textarea type="text" name="message" placeholder="What's up?" rows="1"></textarea>
 
             <p>What kind of <span id="help-word">help</span> do you need from me?</p>
 
+            <!-- radio buttons allow users to select only one option in the group when submitting the form -->
+            <!-- each div contains the actual radio input button and the label which points to it to tell users what they are selecting - each group are also wrapped within a div with consistent class styling of help-radio to place the label and radio button directly next to each other in the CSS -->
             <div class="help-radio">
                 <input type="radio" id="coding-help" name="help">
                 <label for="coding-help" style="animation-delay: 0s">Coding Help</label>
@@ -50,22 +76,42 @@
                 <label for="other-help" style="animation-delay: 3s">Other Help</label>
             </div>
 
-            <div class="help-radio" style="margin-top: 20px;" id="dropdown-menu">
+            <!-- drop-down menu that has same styling as radio buttons to place label and menu right next to each other in CSS -->
+            <div class="help-radio" id="dropdown-menu">
                 <label for="language">Favorite Programming Language?</label>
-                <select name="language" style="animation-delay: 1s;">
+
+                <!-- actual drop-down menu input containing 5 options to select -->
+                <select name="language">
+                    <!-- each option also contains their corresponding value, so when implementing functionality of the form later, we can get the value of the option selecting via this drop-down menu -->
                     <option value="java">Java</option>
                     <option value="python">Python</option>
-                    <option value="Javascript">Javascript</option>
-                    <option value="Swift">Swift</option>
+                    <option value="javascript">Javascript</option>
+                    <option value="swift">Swift</option>
+                    <option value="other">Other (tell me above!)</option>
                 </select>
             </div>
 
+            <!-- button type input in order to submit the form -->
             <input type="submit" id="submit-button" name="submit-button" style="color: black;">
         </form>
 
-        <h2>Direct Contact</h2>
-        <p>Feel free to also directly reach out to me at <a id="mail-link" href="mailto:brainsparkteam@gmail.com"><img id="email-image" src="../assets/emailIcon.webp" alt="email icon">brainsparkteam@gmail.com</a> with any questions.</p>
+        <!-- semantic HTML section to allow users to directly contact me with my email with any questions -->
+        <section>
+            <h2>Direct Contact</h2>
+            <p>Feel free to also directly reach out to me at <a id="mail-link" href="mailto:brainsparkteam@gmail.com"><img id="email-image" src="../assets/emailIcon.webp" alt="email icon">brainsparkteam@gmail.com</a> with any questions.</p> <!-- note how the image of the email icon is also wrapped within the link to allow it to be clicked and navigate to the link as well - link uses the mailto protocol to directly open up the user's email client on their device with my corresponding email address to directly send me an email with a question -->
+        </section>
     </main>
+
+    <!-- adding 3 linebreaks to allow the footer to reach the bottom of the page like on the home and skills pages -->
+    <br><br><br>
+
+    <!-- semantic HTML to create footer found on every page -->
+    <footer>
+        <hr>
+        <p>Thanks for stopping by!</p>
+    </footer>
+
+    <!-- connecting javascript file to this html page to add the goofy mode functionality -->
     <script src="app.js"></script>
 </body>
 </html>
